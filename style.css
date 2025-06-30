@@ -1,0 +1,233 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.input-area {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#task-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#add-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#add-button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li span {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+li span.completed {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.task-content {
+    flex-grow: 1;
+}
+
+.task-datetime {
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+}
+
+/* ボタン共通のスタイル */
+.button-group button {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 5px; /* ボタン間の隙間 */
+}
+
+.complete-button {
+    background-color: #007bff; /* 青 */
+}
+.complete-button:hover {
+    background-color: #0056b3;
+}
+
+.edit-button {
+    background-color: #28a745; /* 緑 */
+}
+.edit-button:hover {
+    background-color: #218838;
+}
+
+.delete-button {
+    background-color: #dc3545; /* 赤 */
+}
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.undo-button {
+    background-color: #ffc107; /* 黄 */
+    color: #212529;
+}
+.undo-button:hover {
+    background-color: #e0a800;
+}
+
+.button-group {
+    display: flex;
+    align-items: center; /* ボタンの縦位置を中央に */
+}
+
+.edit-input {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.completed-area {
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.completed-area h2 {
+    margin: 0; /* デフォルトのマージンをリセット */
+    color: #666;
+    font-size: 20px;
+}
+
+.completed-header {
+    display: flex;
+    justify-content: space-between; /* 両端に寄せる */
+    align-items: center; /* 縦方向の中央揃え */
+    margin-bottom: 10px; /* リストとの間に隙間を空ける */
+}
+
+#completed-list li .task-content span {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.delete-all-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-all-button:hover {
+    background-color: #c82333;
+}
+
+/* スマートフォン向けスタイル */
+@media screen and (max-width: 600px) {
+    body {
+        height: auto; /* スマホでは高さの固定を解除 */
+        align-items: flex-start; /* 上寄せに */
+        padding: 20px 0; /* 上下の余白を追加 */
+    }
+
+    .container {
+        width: 90%; /* 画面幅の90%を使用 */
+        padding: 20px;
+        border-radius: 0; /* 角丸をなくす */
+        box-shadow: none; /* 影をなくす */
+    }
+
+    li {
+        flex-direction: column; /* 縦並びにする */
+        align-items: flex-start; /* 左寄せに */
+        padding: 15px 10px; /* 上下の余白を増やす */
+    }
+
+    .task-content {
+        width: 100%; /* 幅をいっぱいに使う */
+        margin-bottom: 10px; /* ボタンとの間に隙間 */
+    }
+
+    .button-group {
+        width: 100%; /* 幅をいっぱいに使う */
+        justify-content: flex-end; /* ボタンを右寄せに */
+    }
+
+    .button-group button {
+        margin-left: 10px; /* ボタン間の隙間を広げる */
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    #task-input {
+        font-size: 14px;
+    }
+
+    #add-button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .completed-area h2 {
+        font-size: 18px;
+    }
+
+    .delete-all-button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
